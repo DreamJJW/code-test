@@ -1,0 +1,19 @@
+n = int(input())
+x, y, r = list(map(int, input().split()))
+arr = [[0] * n for _ in range(n)]
+
+arr[x - 1][y - 1] = 'x'
+dis = 0
+
+for i in range(n):
+    for j in range(n):
+        dis = abs(x-i-1) + abs(y-j-1)
+        if dis <= r and arr[i][j] != 'x':
+            arr[i][j] = dis
+
+
+for i in range(n):
+    for j in range(n):
+        print(arr[i][j], end=' ')
+    print()
+
